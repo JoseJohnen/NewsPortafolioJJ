@@ -82,6 +82,18 @@ DATABASES = {
 }
 
 
+# Lines to use when using mysql
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'EjemploDjangoJJ',
+#        'USER':'root',
+#        'PASSWORD':'',
+#        'HOST':'localhost',
+#        'PORT': '33046',
+#    }
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 

@@ -11,6 +11,10 @@
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="{% static 'js/scripts.js' %}"></script>
   </head>
   <body id="page-top">
     <!-- Navigation -->
@@ -29,6 +33,22 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}">Welcome {{ user.username }}</a>
+              </li>
+              <form method="POST" class="nav-item" style="background-color: transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; outline: none;" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="nav-link">Logout</button>
+              </form>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'authView' %}">Sign-up</a>
+              </li>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -36,11 +56,10 @@
     <!-- Header -->
     <header class="bg-primary bg-gradient text-white">
       <div class="container px-4 text-center">
-        <h1 class="fw-bolder">Welcome to Scrolling Nav</h1>
-        <p class="lead">A functional Bootstrap 5 boilerplate for one page scrolling websites</p>
-        <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
-        <br>
-        <br>
+        {% if user.is_authenticated %}
+          <h1 class="fw-bolder">Welcome to Scrolling Nav</h1>
+        {% endif %}
+        <br />
         {% if messages %}
           {% for message in messages %}
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -52,42 +71,25 @@
       </div>
     </header>
     <!-- About section -->
-    <section id="about">
+    <section>
       <div class="container px-4">
         <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8">
             {% block content %}
 
             {% endblock %}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8"></div>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-          <div class="col-lg-8"></div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer style=" position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color:#fff;" class="py-5 bg-dark ">
       <div class="container px-4">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
       </div>
     </footer>
-    <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS -->
-    <script src="{% static 'js/scripts.js' %}"></script>
   </body>
 </html>

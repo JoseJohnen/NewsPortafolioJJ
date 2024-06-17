@@ -4,7 +4,7 @@
   <h2>{{ name }}</h2>
   <form method="POST" action="{% url 'join' %}">
     {% csrf_token %}
-    <div class="mb-3">
+    {% comment %} <div class="mb-3">
       <label for="exampleInputEmail" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Email Here" name="email" value="{{ email }}"/>
     </div>
@@ -23,6 +23,17 @@
     <div class="mb-3">
       <label for="exampleInputAge" class="form-label">Age</label>
       <input type="number" min="1" class="form-control" id="exampleInputAge" placeholder="Your Age Here" name="age" value="{{ age }}"/>
+    </div> {% endcomment %}
+    <label for="exampleInputTitle" class="form-label">Email address</label>
+      <input type="text" class="form-control" id="exampleInputTitle" placeholder="The Title of the News goes here" name="title" value="{{ title }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputContent" class="form-label">Password</label>
+      <input type="textarea" class="form-control" id="exampleInputContent" placeholder="The News Content here" name="content" value="{{ content }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputDate" class="form-label">Password</label>
+      <input type="date" class="form-control" id="exampleInputDate" name="date" value="{{ date }}"/>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

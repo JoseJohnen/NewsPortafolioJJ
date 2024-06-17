@@ -1,0 +1,26 @@
+<html>
+    <title>The Django Course</title>
+    <body>
+        <h1> Django Course</h1>
+        <hr>
+        <h1> This is the Home Page </h1>
+        <p> Welcome to the Django Course </p>
+        {% if name != '' %}
+        <h3>{{ name }}</h3>
+        {% else %}
+        <h3>Wrong Person</h3>
+        {% endif %}
+        <hr>
+        <hr>
+        <center>
+            {% for emp in employees %}
+            <br>
+            <br>
+            <h3>{{ emp.name }}</h3>
+            <p>{{ emp.designation }}</p>
+            <br>
+            {% endfor %}
+        </center>
+        <h3>{{ version }}</h3>
+    </body>
+</html>

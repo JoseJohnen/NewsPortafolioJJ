@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- Services section -->
+  <h2>{{ name }}</h2>
+  <form method="POST" action="{% url 'join' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Email Here" name="email" value="{{ email }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Your Password Here" name="passwd" value="{{ passwd }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputFirstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Your First Name Here" name="fname" value="{{ fname  }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputLastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="exampleInputLastName" placeholder="Your Last Name Here" name="lname" value="{{ lname }}"/>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputAge" class="form-label">Age</label>
+      <input type="number" min="1" class="form-control" id="exampleInputAge" placeholder="Your Age Here" name="age" value="{{ age }}"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}

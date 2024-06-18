@@ -35,11 +35,11 @@
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'profile' %}">Welcome {{ user.username }}</a>
+                <a class="nav-link" href="{% url 'profile' %}">{{ user.username }}</a>
               </li>
-              <form method="POST" class="nav-item" style="background-color: transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; outline: none;" action="{% url 'logout' %}">
+              <form method="POST" class="nav-item" action="{% url 'logout' %}">
                 {% csrf_token %}
-                <button type="submit" class="nav-link">Logout</button>
+                <button style="background-color: transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; outline: none;" type="submit" class="nav-link">Logout</button>
               </form>
             {% else %}
               <li class="nav-item">

@@ -24,13 +24,13 @@ def homepage(request):
 
     news = [
         { 
-            'title': 'John',
-            'content':'Some news',
+            'title': 'Something happend in views',
+            'content':'Some news ... How to put together hard data and data from db, see the code for more details',
             'date': '2024-06-17'
         },
         { 
-            'title': 'Vikas',
-            'content':'Some more news',
+            'title': 'Something happend in the index template',
+            'content':'Some more news ... How to set the right spaces (although with less than appropiate colours) you also need to see the code for that',
             'date': '2024-06-17'
         },
         { 

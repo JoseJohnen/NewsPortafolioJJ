@@ -1,0 +1,215 @@
+/* Ensure the body and html take up the full height of the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body takes up the full height */
+}
+
+/* Body styling for flex layout */
+body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+section {
+    margin-bottom: 1.3em;
+}
+
+/* Container styling */
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Heading styling */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: relative; /* Relative position for flow within the body */
+    margin-bottom: 1.3em;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: inline-block;
+    margin: auto;
+}
+
+.menu > li {
+    float: left;
+    width: 140px;
+    height: 40px;
+    line-height: 40px; 
+    cursor: pointer;
+    font-size: 17px;
+    list-style-type: none;
+}
+
+.sub-menu {
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+}
+
+.sub-menu li {
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 0;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+}
+
+.sub-menu li:last-child {
+    border-bottom: 0;
+}
+
+.sub-menu li:hover {
+    background: black;
+}
+
+.menu > li:hover .sub-menu li {
+    transform: scale(1);
+}
+
+.menu > li:hover .sub-menu {
+    transform: scale(1);
+}
+
+.menu > li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu > li a:hover {
+    color: wheat;
+}
+
+.left {
+    margin-left: -3.5em;
+}
+
+.right {
+    margin-right: 2.5em;
+}
+
+/* Footer styling */
+footer {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to the bottom if content is not enough */
+}
+
+.center {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.justify-center-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 7.5px;
+    margin: auto;
+}
+
+.column {
+    width: 20%;
+}
+
+.copyright {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Link styling */
+div p > a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+div p > a:hover {
+    color: wheat;
+}
+
+/* Media Queries */
+@media (max-width: 62.75em) {
+    .pcmenu {
+        display: none;
+    }
+}
+
+@media (min-width: 62.75em) {
+    .sandwitch {
+        display: none;
+    }
+}

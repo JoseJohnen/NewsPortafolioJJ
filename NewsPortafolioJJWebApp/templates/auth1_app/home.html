@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Home
+{% endblock %}
+{% block links %}
+
+{% endblock %}
+{% block content %}
+  <h2>Home</h2>
+  <p>Welcome, {{ request.user.username }}!</p>
+  <a href="{% url 'protected' %}">Go To Your Protected Page!</a>
+  <p>you will not be able to go there if you are not login</p>
+  <center>
+    <p><b>News</b></p>
+  {% for emp in news %}
+    <div class="">
+      <h4><strong>{{ emp.title }}</strong></h4>{{ emp.date }}
+    </div>
+    <div class="">
+      <p class="" style="text-align: justify;">{{ emp.content }}</p>
+    </div>
+    <br />
+    <br />
+  {% endfor %}
+  <center>
+{% endblock %}
